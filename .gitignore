@@ -1,4 +1,6 @@
 samples/
+outputs/
+
 .idea
 
 **/__pycache__/
