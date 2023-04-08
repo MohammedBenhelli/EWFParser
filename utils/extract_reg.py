@@ -57,8 +57,9 @@ def extract_efw_hive(config_dir_object, data_partition_fs, dest: str):
                     filepath = USERS_DIR_PATH + "/" + entry.info.name.name.decode() + "/" + user_entry.info.name.name.decode()
                     print(f"Extracting {filepath} registry")
                     fileobject = data_partition_fs.open(filepath)
-                    with open(f"{dest}/{fileobject.info.name.name.decode()}", 'wb') as f:
+                    check_dir_exist(f"{dest}/{entry.info.name.name.decode()}")
+                    with open(f"{dest}/{entry.info.name.name.decode()}/{fileobject.info.name.name.decode()}", 'wb') as f:
                         f.write(fileobject.read_random(0, fileobject.info.meta.size))
-                    reg = Registry(f"{dest}/{fileobject.info.name.name.decode()}")
+                    reg = Registry(f"{dest}/{entry.info.name.name.decode()}/{fileobject.info.name.name.decode()}")
                     extract_all_reg(reg.root(),
                                     f"{dest}/{entry.info.name.name.decode()}/{user_entry.info.name.name.decode()}_extract")
