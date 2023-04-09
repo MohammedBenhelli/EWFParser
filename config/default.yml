@@ -21,7 +21,7 @@ LOGS_FILES:
 
 REG_FILES:
   - "SAM"
-  # - "SOFTWARE"
+  - "SOFTWARE"
   - "SYSTEM"
   - "SECURITY"
 

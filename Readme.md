@@ -89,10 +89,10 @@ You will need to install the latest version of Python 3.10, which can be downloa
   - [ ] `info` command
   - [x] `verify` command
   - [x] `cat` command
-  - [ ] `browsers` command
-  - [ ] `logs` command
-  - [ ] `hives` command
-  - [ ] `reg` command
+  - [x] `browsers` command
+  - [x] `logs` command
+  - [x] `hives` command
+  - [x] `reg` command
 - [x] Merkle proof for file signature check
 - [ ] Extracting Browsers
     - [x] Edge
