@@ -1,19 +1,12 @@
-DATA_PARTITION = b'Basic data partition'
+import yaml
 
-CONFIG_DIR_PATH = "/Windows/System32/Config"
+# Declare a global variable to hold the cached constants
+_CACHED_CONSTANTS = None
 
-REG_FILES = [
-    'SAM',
-    # 'SOFTWARE',
-    'SYSTEM',
-    'SECURITY'
-]
 
-MICROSOFT_PARTITION = b'EFI system partition'
-
-USERS_DIR_PATH = "/Users"
-
-USER_HIVES = [
-    'NTUSER.DAT',
-    'UsrClass.dat'
-]
+def load_constants(config: str = ''):
+    global _CACHED_CONSTANTS
+    if _CACHED_CONSTANTS is None:
+        with open(config) as file:
+            _CACHED_CONSTANTS = yaml.load(file, Loader=yaml.FullLoader)
+    return _CACHED_CONSTANTS

@@ -1,0 +1,30 @@
+DATA_PARTITION: !!binary |
+  QmFzaWMgZGF0YSBwYXJ0aXRpb24=
+
+EFI_PARTITION: !!binary |
+  RUZJIHN5c3RlbSBwYXJ0aXRpb24=
+
+CONFIG_DIR_PATH: "/Windows/System32/Config"
+
+LOGS_DIR_PATH: "/Windows/System32/winevt/Logs"
+
+MFT_PATH: "/$MFT"
+
+USERS_DIR_PATH: "/Users"
+
+LOGS_FILES:
+  - 'Parameters.evtx'
+  - 'Security.evtx'
+  - 'Setup.evtx'
+  - 'System.evtx'
+  - 'Windows Powershell.evtx'
+
+REG_FILES:
+  - 'SAM'
+  # - 'SOFTWARE'
+  - 'SYSTEM'
+  - 'SECURITY'
+
+USER_HIVES:
+  - 'NTUSER.DAT'
+  - 'UsrClass.dat'
