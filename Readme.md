@@ -87,17 +87,21 @@ You will need to install the latest version of Python 3.10, which can be downloa
   - [x] `ls` command
   - [ ] `cp` command
   - [ ] `info` command
+  - [x] `verify` command
   - [x] `cat` command
   - [ ] `browsers` command
   - [ ] `logs` command
   - [ ] `hives` command
   - [ ] `reg` command
-  - [ ] `ktape` command
+- [x] Merkle proof for file signature check
 - [ ] Extracting Browsers
     - [x] Edge
     - [x] Chrome
     - [x] Internet Explorer
     - [ ] Firefox
+    - [ ] Brave
+    - [ ] Opera
+    - [ ] Puffin
 - [x] Extracting MFT
     - [ ] Parsing MFT
 - [ ] Refactor

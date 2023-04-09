@@ -11,11 +11,12 @@ from utils.extract_logs import extract_logs
 from utils.extract_mft import extract_mft
 from utils.extract_reg import extract_efw_reg, EwfImgInfo, extract_efw_hive
 from utils.file import check_dir_exist
+from utils.merkle import create_merkle_tree
 
 
 @click.command('extract')
 @click.option('--file', prompt='EWF file location', help='The EWF file to parse.')
-@click.option('--dest', default=f'outputs/{datetime.fromtimestamp(time.time()).strftime("%d-%m-%Y--%H-%M-%S")}',
+@click.option('--dest', default=f'./outputs/{datetime.fromtimestamp(time.time()).strftime("%d-%m-%Y--%H-%M-%S")}',
               help='The destination directory.')
 @click.option('--config', default='./config/default.yml', help='The config for data extraction.')
 def extract_ewf(file: str, dest: str, config: str):
@@ -44,3 +45,7 @@ def extract_ewf(file: str, dest: str, config: str):
             # extract_logs(data_partition_fs, f"{dest}/Logs")
             # Browsers
             extract_browsers(data_partition_fs, f"{dest}/Browsers")
+
+    merkle_proof = create_merkle_tree(dest)
+    with open(f"merkle-proof", 'w') as p:
+        p.write(merkle_proof)
