@@ -85,7 +85,8 @@ You will need to install the latest version of Python 3.10, which can be downloa
 - [x] Add subcommand
   - [x] `partition` command
   - [x] `ls` command
-  - [x] `cp` command
+  - [ ] `cp` command
+  - [ ] `info` command
   - [x] `cat` command
 - [ ] Extracting Browsers
     - [x] Edge
