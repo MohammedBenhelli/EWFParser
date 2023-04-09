@@ -95,6 +95,9 @@ You will need to install the latest version of Python 3.10, which can be downloa
     - [ ] Firefox
 - [x] Extracting MFT
     - [ ] Parsing MFT
+- [ ] Refactor
+  - [ ] Clean code
+  - [ ] Add ruff linter
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
