@@ -92,6 +92,7 @@ You will need to install the latest version of Python 3.10, which can be downloa
   - [ ] `logs` command
   - [ ] `hives` command
   - [ ] `reg` command
+  - [ ] `ktape` command
 - [ ] Extracting Browsers
     - [x] Edge
     - [x] Chrome
