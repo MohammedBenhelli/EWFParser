@@ -13,18 +13,29 @@ MFT_PATH: "/$MFT"
 USERS_DIR_PATH: "/Users"
 
 LOGS_FILES:
-  - 'Parameters.evtx'
-  - 'Security.evtx'
-  - 'Setup.evtx'
-  - 'System.evtx'
-  - 'Windows Powershell.evtx'
+  - "Parameters.evtx"
+  - "Security.evtx"
+  - "Setup.evtx"
+  - "System.evtx"
+  - "Windows Powershell.evtx"
 
 REG_FILES:
-  - 'SAM'
-  # - 'SOFTWARE'
-  - 'SYSTEM'
-  - 'SECURITY'
+  - "SAM"
+  # - "SOFTWARE"
+  - "SYSTEM"
+  - "SECURITY"
 
 USER_HIVES:
-  - 'NTUSER.DAT'
-  - 'UsrClass.dat'
+  - "NTUSER.DAT"
+  - "UsrClass.dat"
+
+
+
+EDGE_PREFIX: "MicrosoftEdge"
+
+CHROME_PREFIX: "Chrome"
+
+IE_PREFIXES:
+  - "History"
+  - "UserData"
+  - "Cookies"
