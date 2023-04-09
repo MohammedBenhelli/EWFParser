@@ -3,7 +3,6 @@ import pyewf
 import pytsk3
 
 from utils.extract_reg import EwfImgInfo
-from utils.file import filetype_enum_to_str
 
 
 @click.command('cat')

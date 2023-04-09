@@ -88,6 +88,10 @@ You will need to install the latest version of Python 3.10, which can be downloa
   - [ ] `cp` command
   - [ ] `info` command
   - [x] `cat` command
+  - [ ] `browsers` command
+  - [ ] `logs` command
+  - [ ] `hives` command
+  - [ ] `reg` command
 - [ ] Extracting Browsers
     - [x] Edge
     - [x] Chrome
