@@ -284,7 +284,7 @@ python main.py cat --file <path-to-ewf-evidence> <path-to-file>
     - [ ] Parsing MFT
 - [ ] Refactor
     - [ ] Clean code
-    - [ ] Add ruff linter
+    - [x] Add ruff linter
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
