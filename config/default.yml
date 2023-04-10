@@ -29,13 +29,18 @@ USER_HIVES:
   - "NTUSER.DAT"
   - "UsrClass.dat"
 
-
-
 EDGE_PREFIX: "MicrosoftEdge"
 
 CHROME_PREFIX: "Chrome"
+
+FIREFOX_PREFIX: "Firefox"
 
 IE_PREFIXES:
   - "History"
   - "UserData"
   - "Cookies"
+  - "IEDownloadHistory"
+  - "INetCookies"
+
+BRAVE_PREFIXES:
+  - "User Data"
