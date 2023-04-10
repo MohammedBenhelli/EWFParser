@@ -14,8 +14,7 @@ from utils.merkle import create_merkle_tree
 
 @click.command('browsers')
 @click.option('--file', prompt='EWF file location', help='The EWF file to parse.')
-@click.option('--dest', default=f'./outputs/{datetime.fromtimestamp(time.time()).strftime("%d-%m-%Y--%H-%M-%S")}',
-              help='The destination directory.')
+@click.option('--dest', default=f'./outputs/{datetime.fromtimestamp(time.time()).strftime("%d-%m-%Y--%H-%M-%S")}', help='The destination directory.')
 @click.option('--config', default='./config/default.yml', help='The config for data extraction.')
 def extract_browsers_ewf(file: str, dest: str, config: str):
     print(f"Config file: {config}")
@@ -36,6 +35,6 @@ def extract_browsers_ewf(file: str, dest: str, config: str):
             extract_browsers(data_partition_fs, f"{dest}/Browsers")
 
     merkle_proof = create_merkle_tree(dest)
-    with open(f"merkle-proof.txt", 'w') as p:
+    with open("merkle-proof.txt", 'w') as p:
         p.write(merkle_proof)
     print(f"Proof for extracted artifacts: {merkle_proof} written at ./merkle-proof.txt")

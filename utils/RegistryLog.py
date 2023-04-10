@@ -126,7 +126,7 @@ class RegistryLog(object):
     def write_dirty_page(self, dirty_page_reference, dirty_page):
         """Write a dirty page to the primary file."""
         offset_primary = dirty_page_reference.offset() + self._primary_regf.first_hbin_offset()
-        size = dirty_page_reference.size()
+        # size = dirty_page_reference.size()
         dirty_data = dirty_page.data()
         self._primary.seek(offset_primary)
         self._primary.write(dirty_data)

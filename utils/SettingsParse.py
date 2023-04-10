@@ -32,7 +32,6 @@ from __future__ import unicode_literals
 
 from datetime import datetime, timedelta
 from uuid import UUID
-import binascii
 import struct
 
 REG_COMPOSITE_TYPE = 0x100

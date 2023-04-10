@@ -35,6 +35,6 @@ def extract_reg_ewf(file: str, dest: str, config: str):
             extract_efw_reg(data_partition_fs, f"{dest}/Registries")
 
     merkle_proof = create_merkle_tree(dest)
-    with open(f"merkle-proof.txt", 'w') as p:
+    with open("merkle-proof.txt", 'w') as p:
         p.write(merkle_proof)
     print(f"Proof for extracted artifacts: {merkle_proof} written at ./merkle-proof.txt")

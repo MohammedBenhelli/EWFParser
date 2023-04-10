@@ -15,18 +15,30 @@ def to_windows_path(p: str) -> str:
 
 def filetype_enum_to_str(i: int) -> str:
     match i:
-        case 0: return 'Unknown type'
-        case 1: return 'Named pipe'
-        case 2: return 'Character device'
-        case 3: return 'Directory'
-        case 4: return 'Block device'
-        case 5: return 'Regular file'
-        case 6: return 'Symbolic link'
-        case 7: return 'Socket'
-        case 8: return 'Shadow inode (solaris)'
-        case 9: return 'Whiteout (openbsd)'
-        case 10: return 'Special (TSK added "Virtual" files)'
-        case 11: return 'Special (TSK added "Virtual" directories)'
+        case 0:
+            return 'Unknown type'
+        case 1:
+            return 'Named pipe'
+        case 2:
+            return 'Character device'
+        case 3:
+            return 'Directory'
+        case 4:
+            return 'Block device'
+        case 5:
+            return 'Regular file'
+        case 6:
+            return 'Symbolic link'
+        case 7:
+            return 'Socket'
+        case 8:
+            return 'Shadow inode (solaris)'
+        case 9:
+            return 'Whiteout (openbsd)'
+        case 10:
+            return 'Special (TSK added "Virtual" files)'
+        case 11:
+            return 'Special (TSK added "Virtual" directories)'
 
 
 def copy_fs(data_partition_fs, directory, dest: str, parent_path):

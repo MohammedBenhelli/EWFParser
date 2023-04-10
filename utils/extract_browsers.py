@@ -20,7 +20,7 @@ def dump_protect_web_cache(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Local/{entry.info.name.name.decode()}/WebCache", filepath)
-            except:
+            except Exception:
                 continue
             # Protect
             try:
@@ -28,7 +28,7 @@ def dump_protect_web_cache(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Local/{entry.info.name.name.decode()}/Protect", filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -54,7 +54,7 @@ def dump_edge(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Local/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
             # Edge Chromium
             try:
@@ -63,7 +63,7 @@ def dump_edge(data_partition_fs, dest: str):
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Local/{entry.info.name.name.decode()}/EdgeChromium",
                         filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -89,7 +89,7 @@ def dump_chrome(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Local/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -115,7 +115,7 @@ def dump_internet_explorer(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Local/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
             # IE AppData Roaming
             try:
@@ -124,7 +124,7 @@ def dump_internet_explorer(data_partition_fs, dest: str):
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir,
                         f"{dest}/Roaming/{entry.info.name.name.decode()}/Internet Explorer", filepath)
-            except:
+            except Exception:
                 continue
             # Windows AppData Roaming
             try:
@@ -138,7 +138,7 @@ def dump_internet_explorer(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Roaming/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
             # Office
             try:
@@ -146,7 +146,7 @@ def dump_internet_explorer(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Roaming/{entry.info.name.name.decode()}/Office", filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -172,7 +172,7 @@ def dump_firefox(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Roaming/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -198,7 +198,7 @@ def dump_brave(data_partition_fs, dest: str):
                         copy_fs(data_partition_fs, root_dir,
                                 f"{dest}/Local/{entry.info.name.name.decode()}/{package_entry.info.name.name.decode()}",
                                 filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -218,7 +218,7 @@ def dump_opera(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Local/{entry.info.name.name.decode()}/Opera", filepath)
-            except:
+            except Exception:
                 continue
             # Roaming Appdata
             try:
@@ -226,7 +226,7 @@ def dump_opera(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Roaming/{entry.info.name.name.decode()}/Opera", filepath)
-            except:
+            except Exception:
                 continue
 
 
@@ -246,7 +246,7 @@ def dump_puffin(data_partition_fs, dest: str):
                 root_dir = data_partition_fs.open_dir(filepath)
                 print(f"Extracting {filepath} directory")
                 copy_fs(data_partition_fs, root_dir, f"{dest}/Local/{entry.info.name.name.decode()}/Puffin", filepath)
-            except:
+            except Exception:
                 continue
 
 

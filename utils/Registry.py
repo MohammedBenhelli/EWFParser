@@ -250,7 +250,7 @@ class RegistryValue(object):
     def value(self, overrun=0):
         try:
             return self._vkrecord.data(overrun)
-        except:
+        except Exception:
             return ""
 
     def raw_data(self, overrun=0):
@@ -336,8 +336,8 @@ class RegistryKey(object):
         if self._nkrecord.subkey_number() == 0:
             return []
 
-        l = self._nkrecord.subkey_list()
-        return [RegistryKey(k) for k in l.keys()]
+        ll = self._nkrecord.subkey_list()
+        return [RegistryKey(k) for k in ll.keys()]
 
     def subkey(self, name):
         """

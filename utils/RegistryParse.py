@@ -602,7 +602,7 @@ class HBINCell(RegistryBlock):
         """
         try:
             return HBINCell(self._buf, self._offset + self.size(), self.parent())
-        except:
+        except Exception:
             raise RegistryStructureDoesNotExist("HBINCell does not exist at 0x%x" % (self._offset + self.size()))
 
     def offset(self):
@@ -1667,18 +1667,18 @@ class NKRecord(Record):
         id_ = d.data_id()
 
         if id_ == b"lf":
-            l = LFRecord(self._buf, d.data_offset(), self)
+            ll = LFRecord(self._buf, d.data_offset(), self)
         elif id_ == b"lh":
-            l = LHRecord(self._buf, d.data_offset(), self)
+            ll = LHRecord(self._buf, d.data_offset(), self)
         elif id_ == b"ri":
-            l = RIRecord(self._buf, d.data_offset(), self)
+            ll = RIRecord(self._buf, d.data_offset(), self)
         elif id_ == b"li":
-            l = LIRecord(self._buf, d.data_offset(), self)
+            ll = LIRecord(self._buf, d.data_offset(), self)
         else:
             raise ParseException("Subkey list with type 0x%s encountered, but not yet supported." %
                                  (binascii.hexlify(id_).decode('ascii')))
 
-        return l
+        return ll
 
 
 class HBINBlock(RegistryBlock):
