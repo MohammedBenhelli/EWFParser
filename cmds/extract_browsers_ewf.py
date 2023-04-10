@@ -36,5 +36,6 @@ def extract_browsers_ewf(file: str, dest: str, config: str):
             extract_browsers(data_partition_fs, f"{dest}/Browsers")
 
     merkle_proof = create_merkle_tree(dest)
-    with open(f"merkle-proof", 'w') as p:
+    with open(f"merkle-proof.txt", 'w') as p:
         p.write(merkle_proof)
+    print(f"Proof for extracted artifacts: {merkle_proof} written at ./merkle-proof.txt")

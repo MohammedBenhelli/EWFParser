@@ -7,6 +7,7 @@ from cmds.extract_ewf import extract_ewf
 from cmds.extract_hives_ewf import extract_hives_ewf
 from cmds.extract_logs_ewf import extract_logs_ewf
 from cmds.extract_reg_ewf import extract_reg_ewf
+from cmds.get_merkle_proof import get_merkle_proof
 from cmds.ls_ewf import ls_ewf
 from cmds.partition_ewf import partition_ewf
 from cmds.verify_merkle_proof import verify_merkle_proof
@@ -26,6 +27,7 @@ cli.add_command(cat_ewf)
 cli.add_command(cp_ewf)
 cli.add_command(ls_ewf)
 cli.add_command(partition_ewf)
+cli.add_command(get_merkle_proof)
 cli.add_command(verify_merkle_proof)
 
 if __name__ == '__main__':

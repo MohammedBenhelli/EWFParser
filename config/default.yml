@@ -1,9 +1,6 @@
 DATA_PARTITION: !!binary |
   QmFzaWMgZGF0YSBwYXJ0aXRpb24=
 
-EFI_PARTITION: !!binary |
-  RUZJIHN5c3RlbSBwYXJ0aXRpb24=
-
 CONFIG_DIR_PATH: "/Windows/System32/Config"
 
 LOGS_DIR_PATH: "/Windows/System32/winevt/Logs"

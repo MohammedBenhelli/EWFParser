@@ -28,9 +28,15 @@
 
 ## About The Project
 
-The goal of this project is to create a Python tool that can extract different types of artifacts from EWF (Expert Witness Compression Format) evidence files. This tool can be useful for forensic investigators who need to analyze digital evidence and extract relevant information from EWF files.
+The goal of this project is to create a Python tool that can extract different types of artifacts from EWF (Expert
+Witness Compression Format) evidence files. This tool can be useful for forensic investigators who need to analyze
+digital evidence and extract relevant information from EWF files.
 
-The tool provides various commands to extract different types of artifacts, such as automatic extraction, browser artifacts, logs artifacts, registries artifacts, and hives artifacts. The tool also supports commands to list partitions, list folders, copy files, and print files.
+The tool provides various commands to extract different types of artifacts, such as automatic extraction, browser
+artifacts, logs artifacts, registries artifacts, and hives artifacts. The tool also supports commands to list
+partitions, list folders, copy files, and print files.
+
+This tool use a Merkle proof to validate the extracted artifacts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -38,7 +44,80 @@ The tool provides various commands to extract different types of artifacts, such
 
 [![Python][Python]][Python]
 
-The tool is implemented using Python and uses libraries such as Pyewf, Pytsk3, and PyYAML to extract and parse data from EWF files. The tool can be run from the command line by executing the main.py script with the appropriate command and options.
+The tool is implemented using Python and uses libraries such as Pyewf, Pytsk3, and PyYAML to extract and parse data from
+EWF files. The tool can be run from the command line by executing the main.py script with the appropriate command and
+options.
+
+### Structure
+
+```sh
+├── cmds/
+│   ├── cmd1.py
+├── config/
+│   └── config1.yml
+├── utils/
+│   ├── util1.py
+└── main.py
+```
+
+#### `cmds/`
+
+This folder is used for all the subcommands
+
+#### `config/`
+
+This folder is used for all the YAML config profile.
+
+#### `utils/`
+
+This folder is used for all the python utils.
+
+
+### YAML Configuration File
+
+This repository includes a default YAML configuration file located at config/default.yml that can be used to customize certain aspects of the program. 
+
+#### Configuration Options
+The following configuration options are available:
+
+##### DATA_PARTITION
+A binary-encoded string representing the data partition. This option is used to specify the location of the data partition.
+
+##### CONFIG_DIR_PATH
+The path to the configuration directory. This option is used to specify the path to the system configuration directory.
+
+##### LOGS_DIR_PATH
+The path to the logs directory. This option is used to specify the path to the logs directory.
+
+##### MFT_PATH
+The path to the Master File Table (MFT). This option is used to specify the path to the MFT.
+
+##### USERS_DIR_PATH
+The path to the users directory. This option is used to specify the path to the users directory.
+
+##### LOGS_FILES
+A list of log files to extract. This option is used to specify which log files should be extracted.
+
+##### REG_FILES
+A list of registry files to extract. This option is used to specify which registry files should be extracted.
+
+##### USER_HIVES
+A list of user hives to extract. This option is used to specify which user hives should be extracted.
+
+##### EDGE_PREFIX
+The prefix used for Microsoft Edge artifacts.
+
+##### CHROME_PREFIX
+The prefix used for Chrome artifacts.
+
+##### FIREFOX_PREFIX
+The prefix used for Firefox artifacts.
+
+##### IE_PREFIXES
+A list of prefixes used for Internet Explorer artifacts.
+
+##### BRAVE_PREFIXES
+A list of prefixes used for Brave artifacts.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -117,6 +196,22 @@ This command extracts hives artifacts from the EWF file. It can be run using the
 python main.py hives --file <path-to-ewf-evidence> --dest <optional-path-to-destination> --config <optional-path-to-yaml-config>
 ```
 
+### Get a proof
+
+This command verify the proof of a folder. It can be run using the following command:
+
+```sh
+python main.py get-proof <path-to-artifacts-folder>
+```
+
+### Verify a proof
+
+This command verify the proof of a folder. It can be run using the following command:
+
+```sh
+python main.py verify  --directory <path-to-artifacts-folder> --proof <proof-hash>
+```
+
 ### List partitions
 
 This command lists the partitions in the EWF file. It can be run using the following command:
@@ -165,7 +260,7 @@ python main.py cat --file <path-to-ewf-evidence> <path-to-file>
     - [x] `partition` command
     - [x] `ls` command
     - [x] `cp` command
-    - [ ] `info` command
+    - [x] `get-proof` command
     - [x] `verify` command
     - [x] `cat` command
     - [x] `browsers` command
