@@ -7,6 +7,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#yaml-configuration-file">YAML Configuration File</a></li>
       </ul>
     </li>
     <li>
@@ -71,6 +73,8 @@ This folder is used for all the YAML config profile.
 #### `utils/`
 
 This folder is used for all the python utils.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### YAML Configuration File
