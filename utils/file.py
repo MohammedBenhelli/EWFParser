@@ -10,8 +10,14 @@ def check_dir_exist(d: str):
 
 
 def to_windows_path(p: str) -> str:
-    return p.replace('\\', '/').replace('*', 'all').replace(':', '__').replace('?', 'in').replace('<', '__').replace(
-        '>', '__')
+    return p.replace('\\', '/')\
+        .replace('*', 'all')\
+        .replace(':', '__')\
+        .replace('?', 'in')\
+        .replace('<', '__') \
+        .replace('>', '__') \
+        .replace('|', '__') \
+        .replace('"', '__')
 
 def filetype_enum_to_str(i: int) -> str:
     match i:
